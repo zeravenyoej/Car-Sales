@@ -1,4 +1,4 @@
-import { REMOVE_ITEM, BUY_ITEM } from '../actions/actions';
+import { REMOVE_ITEM, BUY_ITEM } from '../actions';
 
 const initialState = {
     additionalPrice: 0,
@@ -25,13 +25,13 @@ export const reducer = (state = initialState, action) => {
             };
         case BUY_ITEM:
             const newArr = state.car.features.push(action.payload)
-            console.log('reducer: ', newArr)
+            // console.log('reducer: ', newArr)
             const features = state.car.features
-            console.log(features)
+            // console.log(features)
             return {
                 ...state,
                 features: newArr
-            }
+            };
         default:
             return state;
     };
