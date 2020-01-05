@@ -22,17 +22,18 @@ export const reducer = (state = initialState, action) => {
         case REMOVE_ITEM:
             return{
                 ...state,
+                car: {
+                    features: state.car.features.filter(item => item !== action.payload)
+                }
             };
         case BUY_ITEM:
-            // const newArr = state.car.features.push(action.payload)
-            //const newArr = state.additionalFeatures.filter()
             return {
                 ...state,
                 car: {
                     ...state.car, 
                     features: [...state.car.features, action.payload]
                 }, 
-                additionalFeatures: state.additionalFeatures.filter(item=>item !== action.payload)
+                additionalFeatures: state.additionalFeatures.filter(item => item !== action.payload)
             };
         default:
             return state;
