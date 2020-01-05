@@ -23,6 +23,7 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 car: {
+                    ...state.car,
                     features: state.car.features.filter(item => item !== action.payload)
                 }
             };
