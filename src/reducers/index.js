@@ -25,12 +25,12 @@ export const reducer = (state = initialState, action) => {
             };
         case BUY_ITEM:
             const newArr = state.car.features.push(action.payload)
-            // console.log('reducer: ', newArr)
-            const features = state.car.features
-            // console.log(features)
             return {
                 ...state,
-                features: newArr
+                car: {
+                    ...state.car, 
+                    features: [newArr]
+                }
             };
         default:
             return state;
